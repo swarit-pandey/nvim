@@ -4,13 +4,13 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-	use {
+    use {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
         -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
     use({
@@ -20,13 +20,14 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme catppuccin')
         end
     })
-
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
     use('romgrk/barbar.nvim')
     use('nvim-tree/nvim-web-devicons')
     use('lewis6991/gitsigns.nvim')
+    -- use('tamton-aquib/keys.nvim')
     -- use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
     -- use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
     use {
@@ -34,15 +35,15 @@ return require('packer').startup(function(use)
         branch = 'v3.x',
         requires = {
             --- Uncomment these if you want to manage LSP servers from neovim
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
 
             -- LSP Support
-            {'neovim/nvim-lspconfig'},
+            { 'neovim/nvim-lspconfig' },
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'L3MON4D3/LuaSnip'},
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'L3MON4D3/LuaSnip' },
         }
     }
 
@@ -50,7 +51,7 @@ return require('packer').startup(function(use)
         's1n7ax/nvim-window-picker',
         tag = 'v2.*',
         config = function()
-            require'window-picker'.setup()
+            require 'window-picker'.setup()
         end,
     }
 
@@ -61,7 +62,7 @@ return require('packer').startup(function(use)
 
     use {
         "startup-nvim/startup.nvim",
-        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
     }
 
     use {
@@ -71,8 +72,8 @@ return require('packer').startup(function(use)
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
-            "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+            "3rd/image.nvim",              -- Optional image support in preview window: See `# Preview Mode` for more information
         }
     }
-
+    use { "terrortylor/nvim-comment" }
 end)
